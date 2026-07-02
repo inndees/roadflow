@@ -1,0 +1,11 @@
+### 1. Project Creation Page                                                                       
+
+type 1:                                                                                                   
+ Inputs needed:                                                                                     
+ - Project Name, Road Length, Road Width, cross-sectional area,                                                  
+ - Number of Workers, machinery selection (can select multiple option, checkbox grid, have it empty), working time per worker                                                 
+ - Asphalt type (have options to choose, grade 1, 2, 3), tape type (have options to choose, grade 1, 2, 3)                                                                           
+ - Start Date, ending date, around how many meters per hour, working days (which day per week, checkbox grid)      
+Layout: needs to be master detail layout, having all of the inputs lined up vertically in the main panel, the side panel will show the project that you are in and the add project button. 
+
+Create Gantt Chart button at the end of the main panel in bottom right underneath all the questions

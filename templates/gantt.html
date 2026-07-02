@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RoadFlow AI - Gantt Chart</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.css" />
+
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #f5f6f8;
+        }
+
+        .layout {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: #ffffff;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 22px;
+            color: #222;
+        }
+
+        .project-card {
+            background-color: #f1f3f5;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .sidebar button {
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background-color: #111827;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .sidebar button:hover {
+            background-color: #374151;
+        }
+
+        .main-panel {
+            flex: 1;
+            padding: 24px;
+            overflow: auto;
+        }
+
+        .main-header {
+            margin-bottom: 20px;
+        }
+
+        .main-header h1 {
+            font-size: 28px;
+            color: #111827;
+        }
+
+        .main-header p {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .gantt-container {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            min-height: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            overflow-x: auto;
+        }
+
+        #gantt {
+            min-width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Left Side Panel -->
+        <aside class="sidebar">
+            <h2>Project</h2>
+
+            <div class="project-card">
+                <h3>Road Construction</h3>
+                <p><strong>Type:</strong> Asphalt Road</p>
+                <p><strong>Start:</strong> 2026-07-01</p>
+                <p><strong>End:</strong> 2026-07-20</p>
+            </div>
+
+            <button>Create Project</button>
+            <button>Edit Schedule</button>
+            <button>Export Gantt</button>
+        </aside>
+
+        <!-- Main Detail Panel -->
+        <main class="main-panel">
+            <div class="main-header">
+                <h1>Project Gantt Chart</h1>
+                <p>View the construction schedule and task timeline.</p>
+            </div>
+
+            <div class="gantt-container">
+                <svg id="gantt"></svg>
+            </div>
+        </main>
+
+    </div>
+    
+    <script>
+    const projectName = {{ project_name | tojson }};
+    const ganttTasks = {{ tasks | tojson }};
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.umd.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

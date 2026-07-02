@@ -1,0 +1,117 @@
+Build an AI-Powered Civil Construction Scheduling Platform
+Create a web application called RoadFlow AI.
+Problem
+Civil engineering and road construction projects often experience delays because project managers must manually update schedules when unexpected events occur.
+Examples:
+* Rain delays
+* Material shortages
+* Worker absences
+* Equipment breakdowns
+* Late deliveries
+* Site access restrictions
+Current scheduling software is often complicated, expensive, and requires experienced planners to manually adjust timelines.
+The goal of roadflow AI is to automatically generate and update project schedules using AI.
+
+When selecting (+project), you will be able to choose between 3 types of projects:
+- type 1: coat the road and then laying new road on top (can input what type of material will be used)
+- type 2: remove the old road then recycling it with new road to product more material with similar quality as new road without wasting material, then layering it out onto the area removed. 
+- type 3: deep into system (renovating pipes and more) and removing a cross section of deep of road.
+
+Core Concept
+A project manager enters:
+* Road length
+* Road type
+* Cross Sectional Area/ type of shap
+* Number of workers
+* machinery
+* materials
+* Working hours
+* per hour, how much km can be done (give maximum and minimum)
+* Planned start date
+
+The AI automatically creates a construction timeline.
+When conditions change, the AI instantly recalculates the schedule and provides a revised timeline.
+
+MVP Features
+Project Creation
+Create a project setup page where users can enter:
+Project Name
+Road Length
+Road Width
+Project Location
+Number of Workers
+Number of Excavators
+Number of Trucks
+Number of Rollers
+Available Material Quantities
+Start Date
+Working Days Per Week
+Working Hours Per Day
+
+AI Schedule Generation
+: it would be a gantt chart
+- x-axis: timeline (it could be months/days depending on the time frame given)
+- y-axis: tasks that need to be done during a certain time, topic titles are broad
+
+
+
+Interactive Timeline
+Create a visual Gantt-style timeline.
+Each construction phase should appear as a timeline block.
+Users should be able to view:
+* Start date
+* End date
+* Duration
+* Dependencies
+
+Scenario Simulator
+Allow users to trigger events such as:
+Heavy Rain
+Material Delay
+Equipment Breakdown
+Worker Shortage
+Additional Workforce Added
+Additional Machinery Added
+The AI should immediately update the timeline and show:
+* New completion date
+* Delayed tasks
+* Recommended adjustments
+
+AI Recommendations
+After schedule updates, display suggestions such as:
+"Increase workforce by 10 workers to recover 4 lost days."
+"Add one additional excavator to reduce earthwork duration."
+"Delay asphalt placement until weather conditions improve."
+
+Future Features (Display as Coming Soon)
+Photo Analysis
+Drone Progress Monitoring
+Material Tracking
+Weather Forecast Integration
+Supervisor Mobile App
+Automatic Progress Detection
+Risk Prediction Dashboard
+
+User Interface
+Design style:
+* Professional
+* Civil engineering focused
+* Modern dashboard
+* Clean visual hierarchy
+Pages:
+1. Dashboard
+2. Project Creation
+3. Timeline View
+4. Scenario Simulator
+5. Reports
+Use:
+* python
+* flask
+* bootstrap
+* javascript (if needed)
+For MVP use mock AI-generated schedules and mock scenario updates.
+No backend required.
+No authentication required.
+No database required.
+Focus on creating a realistic clickable prototype that demonstrates how AI could simplify civil construction scheduling and project management.
+
