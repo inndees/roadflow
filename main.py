@@ -61,4 +61,4 @@ if __name__ == "__main__":
     print()
     
     # Run on all network interfaces so you can access from other devices if needed
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=8000, debug=True)
